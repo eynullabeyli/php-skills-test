@@ -5,6 +5,8 @@ The form is sent with Ajax and saved to `data/products.json`. The table below th
 updates without reloading the page, shows the total value of each row and the sum of
 all totals, and each row can be edited.
 
+GitHub: https://github.com/eynullabeyli/php-skills-test
+
 ## Requirements
 
 - PHP 7.4 or newer
