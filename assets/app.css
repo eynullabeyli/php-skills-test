@@ -1,0 +1,89 @@
+/* Product inventory: small additions on top of Bootstrap 5. */
+
+.num {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* Table: line the first and last columns up with the card padding. */
+#product-table > :not(caption) > * > * {
+    padding: .75rem 1rem;
+}
+
+#product-table tr > :first-child {
+    padding-left: 1.5rem;
+}
+
+#product-table tr > :last-child {
+    padding-right: 1.5rem;
+}
+
+#product-table thead th {
+    color: var(--bs-secondary-color);
+    font-size: .8125rem;
+    font-weight: 600;
+    vertical-align: bottom;
+}
+
+#product-table tbody th {
+    min-width: 10rem;
+}
+
+@media (max-width: 991.98px) {
+    #product-table > :not(caption) > * > * {
+        padding: .625rem .625rem;
+    }
+
+    #product-table tr > :first-child {
+        padding-left: 1rem;
+    }
+
+    #product-table tr > :last-child {
+        padding-right: 1rem;
+    }
+}
+
+#product-table tfoot {
+    border-top: 2px solid var(--bs-border-color);
+}
+
+.sum-row > * {
+    --bs-table-bg: var(--bs-tertiary-bg);
+    border-bottom-width: 0;
+    font-weight: 600;
+}
+
+/* Row in edit mode. */
+.editing input[name="product_name"] {
+    min-width: 12rem;
+}
+
+.editing input[name="quantity_in_stock"],
+.editing input[name="price_per_item"] {
+    min-width: 6.5rem;
+}
+
+/* Brief highlight on a row that was just added or saved. */
+.row-flash > * {
+    animation: row-flash 2s ease-out;
+}
+
+@keyframes row-flash {
+    from {
+        box-shadow: inset 0 0 0 9999px var(--bs-success-bg-subtle);
+    }
+}
+
+/* Status message: stays in the page so screen readers announce changes. */
+.flash {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1080;
+    max-width: min(24rem, calc(100vw - 2rem));
+    margin: 0;
+}
+
+.flash:empty {
+    display: none;
+}
